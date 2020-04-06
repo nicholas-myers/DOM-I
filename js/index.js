@@ -97,6 +97,7 @@ ctaImg.setAttribute("src", siteContent["cta"]["img-src"]);
 //////////////////// GET MID IMG ///////////////////////
 const midImg = document.getElementById('middle-img');
 midImg.setAttribute("src", siteContent["main-content"]["middle-img-src"]);
+midImg.style.borderRadius = "10px";
 
 
 ////////////////////// GET CTA INFO ///////////////////////
@@ -148,4 +149,13 @@ contactEmail.textContent = siteContent["contact"]["email"];
 //////////////////////// GET FOOTER ///////////////////////////
 const footerContent = document.querySelector('footer p');
 footerContent.textContent = siteContent["footer"]["copyright"];
+footerContent.style.color = "white";
+const footer = document.querySelector('footer');
+
+
+footer.style.backgroundColor = "navy";
+footer.style.padding = "10px";
+footer.style.borderRadius = "10px";
+
+
 
