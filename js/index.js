@@ -52,7 +52,24 @@ const links = document.getElementsByTagName("a");
 for (let i = 0; i < links.length; i++) {
   const linkContent = Object.values(siteContent["nav"]);
   links[i].textContent = linkContent[i];
+  links[i].style.color = "green";
 } //close for
+
+// CREATES NEW LINKS
+const nav = document.querySelector('nav');
+// BLOG
+const blogLink = document.createElement('a');
+blogLink.href = '#Blog';
+blogLink.textContent = 'Blog';
+nav.appendChild(blogLink);
+blogLink.style.color = "green";
+//PROFILE
+const profileLink = document.createElement('a');
+profileLink.href = '#Profile';
+profileLink.textContent = 'Profile';
+nav.prepend(profileLink);
+profileLink.style.color = "green";
+
 
 /////////////// GET CTA IMG ////////////////////
 const ctaImg = document.getElementById('cta-img');
@@ -112,3 +129,4 @@ contactEmail.textContent = siteContent["contact"]["email"];
 //////////////////////// GET FOOTER ///////////////////////////
 const footerContent = document.querySelector('footer p');
 footerContent.textContent = siteContent["footer"]["copyright"];
+
