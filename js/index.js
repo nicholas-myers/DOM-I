@@ -45,10 +45,12 @@ const siteContent = {
 // Example: Update the img src for the logo
 const logo = document.getElementById("logo-img");
 logo.setAttribute("src", siteContent["nav"]["img-src"]);
-logo.style.filter = "invert(100%)"
+logo.style.filter = "invert(100%)";
 
 //////////// GET LINKS /////////////////////
+
 const links = document.getElementsByTagName("a");
+
 for (let i = 0; i < links.length; i++) {
   const linkContent = Object.values(siteContent["nav"]);
   links[i].textContent = linkContent[i];
@@ -57,9 +59,8 @@ for (let i = 0; i < links.length; i++) {
   links[i].style.textDecoration = "none";
 } //close for
 
-
 ///////////////// HEADER ////////////////
-const header = document.querySelector('header');
+const header = document.querySelector("header");
 header.style.backgroundColor = "navy";
 header.style.display = "flex";
 header.style.justifyContent = "center";
@@ -68,55 +69,66 @@ header.style.padding = "10px";
 header.style.borderBottomLeftRadius = "10px";
 header.style.borderBottomRightRadius = "10px";
 // CREATES NEW LINKS
-const nav = document.querySelector('nav');
+const nav = document.querySelector("nav");
+
+nav.addEventListener("mouseover", (event) => {
+  event.target.style.color = "white";
+  
+});
+
+nav.addEventListener("mouseout", (event) => {
+  event.target.style.color = "green";
+});
+
 nav.style.display = "flex";
 nav.style.justifyContent = "space-around";
 nav.style.alignItems = "center";
 
 // BLOG
-const blogLink = document.createElement('a');
-blogLink.href = '#Blog';
-blogLink.textContent = 'Blog';
+const blogLink = document.createElement("a");
+blogLink.href = "#Blog";
+blogLink.textContent = "Blog";
 nav.appendChild(blogLink);
 blogLink.style.color = "green";
 blogLink.style.fontSize = "20px";
 blogLink.style.textDecoration = "none";
 //PROFILE
-const profileLink = document.createElement('a');
-profileLink.href = '#Profile';
-profileLink.textContent = 'Profile';
+const profileLink = document.createElement("a");
+profileLink.href = "#Profile";
+profileLink.textContent = "Profile";
 nav.prepend(profileLink);
 profileLink.style.color = "green";
 profileLink.style.fontSize = "20px";
 profileLink.style.textDecoration = "none";
 
-
 /////////////// GET CTA IMG ////////////////////
-const ctaImg = document.getElementById('cta-img');
+const ctaImg = document.getElementById("cta-img");
 ctaImg.setAttribute("src", siteContent["cta"]["img-src"]);
 //////////////////// GET MID IMG ///////////////////////
-const midImg = document.getElementById('middle-img');
+const midImg = document.getElementById("middle-img");
 midImg.setAttribute("src", siteContent["main-content"]["middle-img-src"]);
 midImg.style.borderRadius = "10px";
 
-
 ////////////////////// GET CTA INFO ///////////////////////
-const ctaArray = document.querySelector('.cta-text').children;
+const ctaArray = document.querySelector(".cta-text").children;
 const ctaButton = ctaArray[1];
 const ctaTitle = ctaArray[0];
 
 ctaTitle.textContent = siteContent["cta"]["h1"];
 ctaButton.textContent = siteContent["cta"]["button"];
 
-
 ///////////////// GET MAIN CONTENT ////////////////
 
 // TITLES //
-const featuresTitle = document.querySelector('.top-content div:first-child h4');
-const aboutTitle = document.querySelector('.top-content div:last-child h4');
-const servicesTitle = document.querySelector('.bottom-content div:first-child h4');
-const productTitle = document.querySelector('.bottom-content div:nth-of-type(2) h4');
-const visionTitle = document.querySelector('.bottom-content div:last-child h4');
+const featuresTitle = document.querySelector(".top-content div:first-child h4");
+const aboutTitle = document.querySelector(".top-content div:last-child h4");
+const servicesTitle = document.querySelector(
+  ".bottom-content div:first-child h4"
+);
+const productTitle = document.querySelector(
+  ".bottom-content div:nth-of-type(2) h4"
+);
+const visionTitle = document.querySelector(".bottom-content div:last-child h4");
 featuresTitle.textContent = siteContent["main-content"]["features-h4"];
 aboutTitle.textContent = siteContent["main-content"]["about-h4"];
 servicesTitle.textContent = siteContent["main-content"]["services-h4"];
@@ -124,11 +136,19 @@ productTitle.textContent = siteContent["main-content"]["product-h4"];
 visionTitle.textContent = siteContent["main-content"]["vision-h4"];
 
 // CONTENT
-const featuresContent = document.querySelector('.top-content div:first-child p');
-const aboutContent = document.querySelector('.top-content div:last-child p');
-const servicesContent = document.querySelector('.bottom-content div:first-child p');
-const productContent = document.querySelector('.bottom-content div:nth-of-type(2) p');
-const visionContent = document.querySelector('.bottom-content div:last-child p');
+const featuresContent = document.querySelector(
+  ".top-content div:first-child p"
+);
+const aboutContent = document.querySelector(".top-content div:last-child p");
+const servicesContent = document.querySelector(
+  ".bottom-content div:first-child p"
+);
+const productContent = document.querySelector(
+  ".bottom-content div:nth-of-type(2) p"
+);
+const visionContent = document.querySelector(
+  ".bottom-content div:last-child p"
+);
 featuresContent.textContent = siteContent["main-content"]["features-content"];
 aboutContent.textContent = siteContent["main-content"]["about-content"];
 servicesContent.textContent = siteContent["main-content"]["services-content"];
@@ -137,25 +157,21 @@ visionContent.textContent = siteContent["main-content"]["vision-content"];
 
 //////////////////////// GET CONTACT ///////////////////////////
 
-const contactTitle = document.querySelector('.contact h4');
-const contactAddress = document.querySelector('.contact p:nth-of-type(1)');
-const contactPhone = document.querySelector('.contact p:nth-of-type(2)');
-const contactEmail = document.querySelector('.contact p:nth-of-type(3)');
+const contactTitle = document.querySelector(".contact h4");
+const contactAddress = document.querySelector(".contact p:nth-of-type(1)");
+const contactPhone = document.querySelector(".contact p:nth-of-type(2)");
+const contactEmail = document.querySelector(".contact p:nth-of-type(3)");
 contactTitle.textContent = siteContent["contact"]["contact-h4"];
 contactAddress.textContent = siteContent["contact"]["address"];
 contactPhone.textContent = siteContent["contact"]["phone"];
 contactEmail.textContent = siteContent["contact"]["email"];
 
 //////////////////////// GET FOOTER ///////////////////////////
-const footerContent = document.querySelector('footer p');
+const footerContent = document.querySelector("footer p");
 footerContent.textContent = siteContent["footer"]["copyright"];
 footerContent.style.color = "white";
-const footer = document.querySelector('footer');
-
+const footer = document.querySelector("footer");
 
 footer.style.backgroundColor = "navy";
 footer.style.padding = "10px";
 footer.style.borderRadius = "10px";
-
-
-
