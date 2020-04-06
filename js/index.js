@@ -97,3 +97,18 @@ aboutContent.textContent = siteContent["main-content"]["about-content"];
 servicesContent.textContent = siteContent["main-content"]["services-content"];
 productContent.textContent = siteContent["main-content"]["product-content"];
 visionContent.textContent = siteContent["main-content"]["vision-content"];
+
+//////////////////////// GET CONTACT ///////////////////////////
+
+const contactTitle = document.querySelector('.contact h4');
+const contactAddress = document.querySelector('.contact p:nth-of-type(1)');
+const contactPhone = document.querySelector('.contact p:nth-of-type(2)');
+const contactEmail = document.querySelector('.contact p:nth-of-type(3)');
+contactTitle.textContent = siteContent["contact"]["contact-h4"];
+contactAddress.textContent = siteContent["contact"]["address"];
+contactPhone.textContent = siteContent["contact"]["phone"];
+contactEmail.textContent = siteContent["contact"]["email"];
+
+//////////////////////// GET FOOTER ///////////////////////////
+const footerContent = document.querySelector('footer p');
+footerContent.textContent = siteContent["footer"]["copyright"];
