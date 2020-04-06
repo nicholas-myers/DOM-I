@@ -45,7 +45,7 @@ const siteContent = {
 // Example: Update the img src for the logo
 const logo = document.getElementById("logo-img");
 logo.setAttribute("src", siteContent["nav"]["img-src"]);
-
+logo.style.filter = "invert(100%)"
 
 //////////// GET LINKS /////////////////////
 const links = document.getElementsByTagName("a");
@@ -53,28 +53,47 @@ for (let i = 0; i < links.length; i++) {
   const linkContent = Object.values(siteContent["nav"]);
   links[i].textContent = linkContent[i];
   links[i].style.color = "green";
+  links[i].style.fontSize = "20px";
+  links[i].style.textDecoration = "none";
 } //close for
 
+
+///////////////// HEADER ////////////////
+const header = document.querySelector('header');
+header.style.backgroundColor = "navy";
+header.style.display = "flex";
+header.style.justifyContent = "center";
+header.style.alignItems = "center";
+header.style.padding = "10px";
+header.style.borderBottomLeftRadius = "10px";
+header.style.borderBottomRightRadius = "10px";
 // CREATES NEW LINKS
 const nav = document.querySelector('nav');
+nav.style.display = "flex";
+nav.style.justifyContent = "space-around";
+nav.style.alignItems = "center";
+
 // BLOG
 const blogLink = document.createElement('a');
 blogLink.href = '#Blog';
 blogLink.textContent = 'Blog';
 nav.appendChild(blogLink);
 blogLink.style.color = "green";
+blogLink.style.fontSize = "20px";
+blogLink.style.textDecoration = "none";
 //PROFILE
 const profileLink = document.createElement('a');
 profileLink.href = '#Profile';
 profileLink.textContent = 'Profile';
 nav.prepend(profileLink);
 profileLink.style.color = "green";
+profileLink.style.fontSize = "20px";
+profileLink.style.textDecoration = "none";
 
 
 /////////////// GET CTA IMG ////////////////////
 const ctaImg = document.getElementById('cta-img');
 ctaImg.setAttribute("src", siteContent["cta"]["img-src"]);
-
 //////////////////// GET MID IMG ///////////////////////
 const midImg = document.getElementById('middle-img');
 midImg.setAttribute("src", siteContent["main-content"]["middle-img-src"]);
