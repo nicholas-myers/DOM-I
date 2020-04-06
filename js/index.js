@@ -74,7 +74,7 @@ ctaButton.textContent = siteContent["cta"]["button"];
 
 ///////////////// GET MAIN CONTENT ////////////////
 
-
+// TITLES //
 const featuresTitle = document.querySelector('.top-content div:first-child h4');
 const aboutTitle = document.querySelector('.top-content div:last-child h4');
 const servicesTitle = document.querySelector('.bottom-content div:first-child h4');
@@ -83,4 +83,17 @@ const visionTitle = document.querySelector('.bottom-content div:last-child h4');
 featuresTitle.textContent = siteContent["main-content"]["features-h4"];
 aboutTitle.textContent = siteContent["main-content"]["about-h4"];
 servicesTitle.textContent = siteContent["main-content"]["services-h4"];
+productTitle.textContent = siteContent["main-content"]["product-h4"];
+visionTitle.textContent = siteContent["main-content"]["vision-h4"];
 
+// CONTENT
+const featuresContent = document.querySelector('.top-content div:first-child p');
+const aboutContent = document.querySelector('.top-content div:last-child p');
+const servicesContent = document.querySelector('.bottom-content div:first-child p');
+const productContent = document.querySelector('.bottom-content div:nth-of-type(2) p');
+const visionContent = document.querySelector('.bottom-content div:last-child p');
+featuresContent.textContent = siteContent["main-content"]["features-content"];
+aboutContent.textContent = siteContent["main-content"]["about-content"];
+servicesContent.textContent = siteContent["main-content"]["services-content"];
+productContent.textContent = siteContent["main-content"]["product-content"];
+visionContent.textContent = siteContent["main-content"]["vision-content"];
