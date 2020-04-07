@@ -48,16 +48,59 @@ logo.setAttribute("src", siteContent["nav"]["img-src"]);
 logo.style.filter = "invert(100%)";
 
 //////////// GET LINKS /////////////////////
+const nav = document.querySelector("nav");
+// BLOG
+const blogLink = document.createElement("a");
+blogLink.href = "#Blog";
+blogLink.textContent = "Blog";
+nav.appendChild(blogLink);
+//PROFILE
+const profileLink = document.createElement("a");
+profileLink.href = "#Profile";
+profileLink.textContent = "Profile";
+nav.prepend(profileLink);
 
 const links = document.getElementsByTagName("a");
-
 for (let i = 0; i < links.length; i++) {
-  const linkContent = Object.values(siteContent["nav"]);
-  links[i].textContent = linkContent[i];
-  links[i].style.color = "green";
-  links[i].style.fontSize = "20px";
-  links[i].style.textDecoration = "none";
-} //close for
+  const link = links[i];
+  link.style.color = "green";
+  link.style.fontSize = "20px";
+  link.style.textDecoration = "none";
+  link.style.borderRadius = "10px";
+  link.style.padding = "5px";
+
+
+  link.addEventListener("mouseover", (event) => {
+  event.target.style.color = "white";
+  event.target.style.backgroundColor = "green";
+  
+});
+  link.addEventListener("mouseout", (event) => {
+    event.target.style.color = "green";
+    event.target.style.backgroundColor = "navy";
+  });
+}
+
+const link1 = document.querySelector('nav a:nth-of-type(2)');
+link1.textContent = siteContent["nav"]["nav-item-1"];
+const link2 = document.querySelector('nav a:nth-of-type(3)');
+link2.textContent = siteContent["nav"]["nav-item-2"];
+const link3 = document.querySelector('nav a:nth-of-type(4)');
+link3.textContent = siteContent["nav"]["nav-item-3"];
+const link4 = document.querySelector('nav a:nth-of-type(5)');
+link4.textContent = siteContent["nav"]["nav-item-4"];
+const link5 = document.querySelector('nav a:nth-of-type(6)');
+link5.textContent = siteContent["nav"]["nav-item-5"];
+const link6 = document.querySelector('nav a:nth-of-type(7)');
+link6.textContent = siteContent["nav"]["nav-item-6"];
+// for (let i = 0; i < links.length; i++) {
+//   const linkContent = Object.values(siteContent["nav"]);
+//   links[i].textContent = linkContent[i];
+//   links[i].style.color = "green";
+//   links[i].style.fontSize = "20px";
+//   links[i].style.textDecoration = "none";
+//   console.log(linkContent);
+// } //close for
 
 ///////////////// HEADER ////////////////
 const header = document.querySelector("header");
@@ -69,37 +112,23 @@ header.style.padding = "10px";
 header.style.borderBottomLeftRadius = "10px";
 header.style.borderBottomRightRadius = "10px";
 // CREATES NEW LINKS
-const nav = document.querySelector("nav");
 
-nav.addEventListener("mouseover", (event) => {
-  event.target.style.color = "white";
+// nav.addEventListener("mouseover", (event) => {
+//   event.target.style.color = "white";
+//   event.target.style.backgroundColor = "lightblue";
   
-});
+// });
 
-nav.addEventListener("mouseout", (event) => {
-  event.target.style.color = "green";
-});
+// nav.addEventListener("mouseout", (event) => {
+//   event.target.style.color = "green";
+//   event.target.style.backgroundColor = "navy";
+// });
 
 nav.style.display = "flex";
 nav.style.justifyContent = "space-around";
 nav.style.alignItems = "center";
 
-// BLOG
-const blogLink = document.createElement("a");
-blogLink.href = "#Blog";
-blogLink.textContent = "Blog";
-nav.appendChild(blogLink);
-blogLink.style.color = "green";
-blogLink.style.fontSize = "20px";
-blogLink.style.textDecoration = "none";
-//PROFILE
-const profileLink = document.createElement("a");
-profileLink.href = "#Profile";
-profileLink.textContent = "Profile";
-nav.prepend(profileLink);
-profileLink.style.color = "green";
-profileLink.style.fontSize = "20px";
-profileLink.style.textDecoration = "none";
+
 
 /////////////// GET CTA IMG ////////////////////
 const ctaImg = document.getElementById("cta-img");
